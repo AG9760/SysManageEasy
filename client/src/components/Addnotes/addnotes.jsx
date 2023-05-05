@@ -28,7 +28,7 @@ const Addnotes = () => {
     console.log(user);
     if (std && subject && myFile && comment) {
       await axios
-        .post("http://localhost:8080/addnotes", user, {
+        .post(process.env.REACT_APP_URL + "/addnotes", user, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

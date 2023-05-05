@@ -22,7 +22,7 @@ export default function OTPVerifyPage() {
   };
 
   const SubmitButton = async () => {
-    let url = "http://localhost:8080/change-password";
+    let url = process.env.REACT_APP_URL + "/change-password";
     let options = {
       method: "POST",
       url: url,

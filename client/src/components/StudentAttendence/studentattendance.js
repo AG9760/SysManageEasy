@@ -50,7 +50,7 @@ const StudentAttendance = () => {
 
   const getAttendance = (id) => {
     try {
-      const url = "http://localhost:8080/attendance/" + id;
+      const url = process.env.REACT_APP_URL + "/attendance/" + id;
       //   return await axios.get(url);
       fetch(url)
         .then((response) => response.json())

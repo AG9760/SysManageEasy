@@ -158,7 +158,8 @@ const AddUser = () => {
     //   dob
     // ) {
     axios
-      .post("http://localhost:8080/addstudent", user)
+
+      .post(process.env.REACT_APP_URL + "/addstudent", user)
       .then((res) => console.log(res));
     // alert("Add Student Success ")
     window.location.href = "/AllUsers";

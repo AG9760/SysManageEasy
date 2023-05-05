@@ -59,7 +59,7 @@ const AllUsers = () => {
 
   useEffect(() => {
     try {
-      const url = `http://localhost:8080/AllUsers?page=${page}`;
+      const url = `${process.env.REACT_APP_URL}/AllUsers?page=${page}`;
       fetch(url)
         .then((users) => {
           console.log(users);
@@ -78,7 +78,7 @@ const AllUsers = () => {
   }, [page]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/getTotalUsers`)
+    fetch(`${process.env.REACT_APP_URL}/getTotalUsers`)
       .then((res) => {
         // setTotalUsers(count.count);
         return res.json();

@@ -77,7 +77,7 @@ const AllUsers = () => {
   }, [page]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/getTotalUsers`)
+    fetch(`${process.env.REACT_APP_URL}/getTotalUsers`)
       .then((res) => {
         // setTotalUsers(count.count);
         return res.json();
@@ -91,7 +91,7 @@ const AllUsers = () => {
     try {
       const response = await axios({
         method: "put",
-        url: "http://localhost:8080/InActive/" + id,
+        url: process.env.REACT_APP_URL + "/InActive/" + id,
         data: {
           flag: flag,
         },

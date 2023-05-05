@@ -20,7 +20,7 @@ function AttStatus(props) {
     try {
       const response = await axios({
         method: "put",
-        url: "http://localhost:8080/Absent/" + id,
+        url: process.env.REACT_APP_URL + "/Absent/" + id,
         headers: {
           Accept: "application/json",
         },

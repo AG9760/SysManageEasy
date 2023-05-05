@@ -28,7 +28,7 @@ const Register = () => {
     const { name, email, password, reEnterPassword } = user;
     if (name && email && password && password === reEnterPassword) {
       axios
-        .post("http://localhost:8080/adduser", user)
+        .post(process.env.REACT_APP_URL + "/adduser", user)
         .then((res) => console.log(res));
     } else {
       alert("invlid input");

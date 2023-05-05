@@ -33,12 +33,12 @@ export default function Shownotes() {
   useEffect(() => {
     try {
       if (subject !== "") {
-        const url = `http://localhost:8080/getTotalNotes`;
+        const url = `${process.env.REACT_APP_URL}/getTotalNotes`;
         axios.get(url, { params: { subject: subject } }).then((c) => {
           setTotalNotes(c.data.count);
         });
       } else {
-        const url = `http://localhost:8080/getTotalNotes`;
+        const url = `${process.env.REACT_APP_URL}/getTotalNotes`;
         axios.get(url).then((c) => {
           setTotalNotes(c.data.count);
         });
@@ -51,7 +51,7 @@ export default function Shownotes() {
 
   const getNotes = () => {
     try {
-      const url = "http://localhost:8080/shownotes/" + subject;
+      const url = process.env.REACT_APP_URL + "/shownotes/" + subject;
       axios.get(url).then((res) => {
         // console.log(res.data.notes);
         setData(res.data.notes);
@@ -60,10 +60,12 @@ export default function Shownotes() {
       console.log("error while calling gettinr user", error);
     }
   };
+
   useEffect(() => {
     try {
       // const page = 2;
-      const url = `http://localhost:8080/shownotes/${subject}`;
+
+      const url = `${process.env.REACT_APP_URL}/shownotes/${subject}`;
       axios.get(url, { params: { page: page } }).then((res) => {
         console.log(res.data.notes);
         setData(res.data.notes);

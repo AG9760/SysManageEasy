@@ -54,7 +54,7 @@ const AllNotes = () => {
 
   useEffect(() => {
     try {
-      const url = "http://localhost:8080/getTotalNotes";
+      const url = process.env.REACT_APP_URL + "/getTotalNotes";
       axios.get(url).then((c) => {
         setTotalNotes(c.data.count);
       });
@@ -66,7 +66,7 @@ const AllNotes = () => {
 
   useEffect(() => {
     try {
-      const url = "http://localhost:8080/showteachernotes?page=" + page;
+      const url = process.env.REACT_APP_URL + "/showteachernotes?page=" + page;
       axios.get(url).then((res) => {
         // console.log("hello", page);
         // console.log(res.data.notes);
@@ -79,7 +79,7 @@ const AllNotes = () => {
   }, [page]);
 
   function downloadImage(img) {
-    saveAs("http://localhost:8080/public/" + img, img);
+    saveAs(process.env.REACT_APP_URL + "/public/" + img, img);
   }
 
   return (

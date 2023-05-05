@@ -20,7 +20,7 @@ const Addcircular = () => {
     const { title, content, date } = user;
     if (title && content && date) {
       axios
-        .post("http://localhost:8080/addcircular", user)
+        .post(process.env.REACT_APP_URL + "/addcircular", user)
         .then((res) => console.log(res));
       setSuccess("circular added successfully");
       // window.location.href = "/addcircular";

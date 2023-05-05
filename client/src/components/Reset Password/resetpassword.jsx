@@ -10,7 +10,7 @@ export default function ResetPasswordPage() {
   const sendOtp = async () => {
     // e.preventdefault();
     try {
-      let url = "http://localhost:8080/email-send";
+      let url = process.env.REACT_APP_URL + "/email-send";
       let options = {
         method: "POST",
         url: url,

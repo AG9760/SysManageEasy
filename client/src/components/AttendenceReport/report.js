@@ -66,7 +66,7 @@ const AttendanceReport = () => {
 
   useEffect(() => {
     try {
-      const url = "http://localhost:8080/getTotalAttendance";
+      const url = process.env.REACT_APP_URL + "/getTotalAttendance";
       axios.get(url).then((c) => {
         setTotalAttendance(c.data.count);
       });
@@ -78,7 +78,7 @@ const AttendanceReport = () => {
 
   useEffect(() => {
     try {
-      const url = "http://localhost:8080/showattendance?page=" + page;
+      const url = process.env.REACT_APP_URL + "/showattendance?page=" + page;
       axios.get(url).then((res) => {
         // console.log("hello", page);
         // console.log(res.data.notes);

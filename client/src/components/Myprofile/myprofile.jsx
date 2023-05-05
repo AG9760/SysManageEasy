@@ -33,7 +33,7 @@ const Myprofile = () => {
 
   const getUser = (id) => {
     try {
-      const url = "http://localhost:8080/" + id;
+      const url = process.env.REACT_APP_URL + "/" + id;
       //   return await axios.get(url);
       fetch(url)
         .then((response) => response.json())
@@ -66,7 +66,7 @@ const Myprofile = () => {
     console.log(user);
     if (name && username && email && phone && gender && password && dob) {
       axios
-        .put("http://localhost:8080/" + id, user)
+        .put(process.env.REACT_APP_URL + "/" + id, user)
         .then((res) => console.log(res));
       alert("Edit Profile successfully");
       window.location.reload();

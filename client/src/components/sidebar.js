@@ -29,7 +29,7 @@ function SideNavbar() {
   const logout = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/logout", {
+      .post(process.env.REACT_APP_URL + "/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
