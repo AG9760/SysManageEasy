@@ -22,7 +22,7 @@ const AllCirculars = () => {
 
   useEffect(() => {
     try {
-      const url = "http://localhost:8080/getTotalCirculars";
+      const url = process.env.REACT_APP_URL + "/getTotalCirculars";
       axios.get(url).then((c) => {
         // console.log("gggggggggggg", totalCircular, c, c.count);
         setTotalCircular(c.data.count);
@@ -35,7 +35,7 @@ const AllCirculars = () => {
 
   useEffect(() => {
     try {
-      const url = "http://localhost:8080/showcircular?page=" + page;
+      const url = process.env.REACT_APP_URL + "/showcircular?page=" + page;
       axios.get(url).then((res) => {
         // console.log("hello", page);
         // console.log(res.data.notes);
