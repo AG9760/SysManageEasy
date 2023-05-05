@@ -41,7 +41,7 @@ const Login = ({ setLoginUser }) => {
 
   const login = () => {
     console.log("Login");
-    axios.post("http://localhost:8080/login", user).then((res) => {
+    axios.post(process.env.REACT_APP_URL + "/login", user).then((res) => {
       console.log(res.data);
       if (res.data.message === "login success") {
         localStorage.setItem("token", res.data.token);
