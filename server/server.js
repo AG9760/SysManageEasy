@@ -113,10 +113,10 @@ app.post("/register", (req, res) => {
 // });
 
 mongoose
-  .connect("mongodb://localhost:27017/myRegisterLoginDB")
-  // .connect(
-  //   "mongodb+srv://project:system@cluster0.mzpdozs.mongodb.net/SMSystem?retryWrites=true&w=majority"
-  // )
+  // .connect("mongodb://localhost:27017/myRegisterLoginDB")
+  .connect(
+    "mongodb+srv://project:system@cluster0.mzpdozs.mongodb.net/SMSystem?retryWrites=true&w=majority"
+  )
   .then((result) => {
     app.listen(8080);
     console.log("Db connected");
