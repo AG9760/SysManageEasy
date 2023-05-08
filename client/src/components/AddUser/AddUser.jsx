@@ -136,12 +136,7 @@ const AddUser = () => {
       )
     );
 
-    setrollnoError(
-      validator(
-        { isnum: true, required: true, minvalue: 2, maxValue: 3 },
-        user.rollNo
-      )
-    );
+    setrollnoError(validator({ isnum: true, required: true }, user.rollNo));
 
     setdateError(validator({ required: true }, user.dob));
 

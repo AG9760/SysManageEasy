@@ -126,7 +126,7 @@ const AllCirculars = () => {
             variant="outlined"
             shape="rounded"
             color="primary"
-            count={Math.ceil(totalCircular / 6)}
+            count={Math.ceil(totalCircular / 4)}
             page={page}
             onChange={handleChange}
           />

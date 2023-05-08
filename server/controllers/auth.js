@@ -427,10 +427,10 @@ exports.addcircular = (req, res, next) => {
 
 exports.showcircular = (req, res) => {
   try {
-    const skip = (req.query.page - 1) * 6;
+    const skip = (req.query.page - 1) * 4;
     circular
       .find()
-      .limit(6)
+      .limit(4)
       .skip(skip)
       .then((circular) => {
         console.log("hello", circular);
