@@ -96,12 +96,7 @@ const AddUser = () => {
   const onrollChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
     // console.log();
-    setrollnoError(
-      validator(
-        { isnum: true, required: true, minvalue: 2, maxValue: 3 },
-        e.target.value
-      )
-    );
+    setrollnoError(validator({ isnum: true, required: true }, e.target.value));
   };
 
   const ondateChange = (e) => {

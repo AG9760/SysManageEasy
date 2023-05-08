@@ -172,17 +172,22 @@ const Login = ({ setLoginUser }) => {
                   className="my-5 display-3 fw-bold ls-tight px-3"
                   style={{ color: "hsl(218, 81%, 95%)" }}
                 >
-                  The best offer <br />
+                  <span style={{ fontSize: "35px" }}>Welcome to</span> <br />
                   <span style={{ color: "hsl(218, 81%, 75%)" }}>
-                    for your business
+                    SchMangSys
                   </span>
                 </h1>
 
                 <p className="px-3" style={{ color: "hsl(218, 81%, 85%)" }}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Eveniet, itaque accusantium odio, soluta, corrupti aliquam
-                  quibusdam tempora at cupiditate quis eum maiores libero
-                  veritatis? Dicta facilis sint aliquid ipsum atque?
+                  Welcome to SchMangSys, a School Management System Software!
+                  Our easy-to-use and powerful software streamlines the
+                  management of your educational institution. From student
+                  registration to attendance management, we've got you covered.
+                  With cloud-based access, you can manage your school from
+                  anywhere, at any time, using any device. Join the growing
+                  number of schools that have already implemented our software
+                  and experience the benefits of efficient and effective school
+                  management.
                 </p>
               </MDBCol>
 
@@ -205,7 +210,7 @@ const Login = ({ setLoginUser }) => {
                       Please enter your login and password!
                     </p>
                     <MDBInput
-                      wrapperClass="mb-4"
+                      wrapperClass="mb-2"
                       label="Email"
                       id="form3"
                       type="email"
@@ -216,7 +221,7 @@ const Login = ({ setLoginUser }) => {
                     />
                     <div className="errormessage">{formErrors.email}</div>
                     <MDBInput
-                      wrapperClass="mb-4"
+                      wrapperClass="mb-2"
                       label="Password"
                       id="form4"
                       type="password"
@@ -227,15 +232,15 @@ const Login = ({ setLoginUser }) => {
                     />
                     <div className="errormessage">{formErrors.password}</div>
 
-                    <div className="d-flex justify-content-between mx-4 mb-4">
-                      <MDBCheckbox
-                        name="flexCheck"
-                        value=""
-                        id="flexCheckDefault"
-                        label="Check me out"
-                      />
-                      <Link to="/email-send" style={{ textDecoration: "none" }}>
-                        <p className="forgot-password">
+                    <div className=" mb-4 mt-4">
+                      <Link
+                        to="/email-send"
+                        style={{ textDecoration: "none", textAlign: "end" }}
+                      >
+                        <p
+                          className="forgot-password"
+                          style={{ textAlign: "center" }}
+                        >
                           <b>Forgot Password ?</b>
                         </p>
                       </Link>

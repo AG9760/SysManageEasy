@@ -77,17 +77,21 @@ const Myprofile = () => {
   };
 
   const [image, setImage] = useState("");
-  const convertToBase = (e) => {
-    console.log(e);
-    var reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-    reader.onload = () => {
-      console.log(reader.result);
-      setImage(reader.result);
-    };
-    reader.onerror = (error) => {
-      console.log("Error:", error);
-    };
+  // const convertToBase = (e) => {
+  //   console.log(e);
+  //   var reader = new FileReader();
+  //   reader.readAsDataURL(e.target.files[0]);
+  //   reader.onload = () => {
+  //     console.log(reader.result);
+  //     setImage(reader.result);
+  //   };
+  //   reader.onerror = (error) => {
+  //     console.log("Error:", error);
+  //   };
+  // };
+
+  const convertToBase = () => {
+    console.log("image uploaded");
   };
 
   return (
@@ -107,6 +111,7 @@ const Myprofile = () => {
         {" "}
         My Profile
       </h3>
+
       <section
         style={{
           backgroundColor: "#eee",
@@ -129,11 +134,12 @@ const Myprofile = () => {
                 >
                   <MDBCol>
                     <MDBCardText>Profile Image:</MDBCardText>
-                    <img src="/admin-myFile-1682709619681.png"></img>
+                    {/* <img src="/admin-myFile-1682709619681.png"></img> */}
                   </MDBCol>
+
                   <MDBInput
                     type="file"
-                    name="name"
+                    name="filename"
                     onChange={convertToBase}
                     style={{
                       border: "2px solid cornflowerblue",
@@ -141,7 +147,7 @@ const Myprofile = () => {
                     }}
                   />
                   <br />
-                  {image === "" || image == null ? (
+                  {/* {image === "" || image == null ? (
                     ""
                   ) : (
                     <img
@@ -150,8 +156,8 @@ const Myprofile = () => {
                       src={image}
                       style={{ borderRadius: "50%" }}
                     />
-                  )}
-                  <button
+                  )} */}
+                  {/* <button
                     onClick={editstudent}
                     style={{
                       borderRadius: "7px",
@@ -165,7 +171,7 @@ const Myprofile = () => {
                     }}
                   >
                     Upload
-                  </button>
+                  </button> */}
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
