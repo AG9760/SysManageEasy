@@ -151,8 +151,8 @@ const AddUser = () => {
 
       .post(process.env.REACT_APP_URL + "/addstudent", user)
       .then((res) => console.log(res));
-    // alert("Add Student Success ")
-    window.location.href = "/AllUsers";
+    alert("Add Student Success ");
+    // window.location.href = "/AllUsers";
     // } else {
     //   alert("Please enter the values");
     // }

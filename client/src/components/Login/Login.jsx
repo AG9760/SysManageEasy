@@ -12,7 +12,6 @@ import {
   MDBCard,
   MDBCardBody,
   MDBInput,
-  MDBCheckbox,
 } from "mdb-react-ui-kit";
 // import { InputAdornment, IconButton, SearchIcon } from "@mui/icons-material";
 
@@ -51,7 +50,12 @@ const Login = ({ setLoginUser }) => {
           localStorage.getItem("token"),
           localStorage.getItem("role")
         );
-        window.location = "/Sidebar";
+        // eslint-disable-next-line no-undef
+        if (res.data.role === "Teacher") {
+          window.location = "/adminhomepage";
+        } else {
+          window.location = "/userhomepage";
+        }
       }
 
       // setLoginUser(res.data.user);

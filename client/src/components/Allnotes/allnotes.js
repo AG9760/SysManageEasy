@@ -115,10 +115,19 @@ const AllNotes = () => {
               <TableCell>
                 <button
                   id={user.filename}
-                  onClick={downloadImage(user.filename)}
+                  style={{
+                    borderRadius: "5px",
+                    border: "1 px solid blue",
+                  }}
                 >
                   Download File
                 </button>
+                {/* <button
+                  id={user.filename}
+                  onClick={downloadImage(user.filename)}
+                >
+                  Download File
+                </button> */}
               </TableCell>
               <TableCell>{user.comment}</TableCell>
             </TBody>

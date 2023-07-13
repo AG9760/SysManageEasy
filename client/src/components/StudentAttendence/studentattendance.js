@@ -92,7 +92,7 @@ const StudentAttendance = () => {
 
         return (
           attendanceDate >= date.selection.startDate &&
-          attendanceDate <= date.selection.endDate
+          attendanceDate < date.selection.endDate
         );
       });
     } else {

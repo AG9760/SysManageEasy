@@ -23,6 +23,8 @@ import Addattendance from "./components/AddAttendance/addattendance";
 import Sidebar from "./components/sidebar";
 import AttendanceReport from "./components/AttendenceReport/report";
 import StudentAttendance from "./components/StudentAttendence/studentattendance";
+import Adminhomepage from "./components/adminhomepage/adminhomepage";
+import Userhomepage from "./components/userhomepage/userhomepage";
 
 function App() {
   const [user, setLoginUser] = useState({});
@@ -138,6 +140,18 @@ function App() {
           <Route path="/sidebar">
             {" "}
             <Sidebar />{" "}
+          </Route>
+          <Route path="/adminhomepage">
+            <div style={({ height: "100%" }, { display: "flex" })}>
+              <Sidebar />
+              <Adminhomepage />{" "}
+            </div>
+          </Route>
+          <Route path="/userhomepage">
+            <div style={({ height: "100%" }, { display: "flex" })}>
+              <Sidebar />
+              <Userhomepage />{" "}
+            </div>
           </Route>
         </Switch>
       </Router>

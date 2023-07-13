@@ -110,20 +110,20 @@ const AttendanceReport = () => {
     let filtered = allattendance.filter((attendance) => {
       console.log(attendance);
       let attendanceDate = new Date(attendance["createdAt"]);
-      console.log(
-        "5555",
-        date,
-        date.selection,
-        date.selection.startDate,
-        "sdsdf",
-        attendanceDate,
-        "dfdgs",
-        attendanceDate > date.selection.startDate &&
-          attendanceDate < date.selection.endDate
-      );
+      // console.log(
+      //   "5555",
+      //   date,
+      //   date.selection,
+      //   date.selection.startDate,
+      //   "sdsdf",
+      //   attendanceDate,
+      //   "dfdgs",
+      //   attendanceDate > date.selection.startDate &&
+      //     attendanceDate < date.selection.endDate
+      // );
       return (
-        attendanceDate > date.selection.startDate &&
-        attendanceDate <= date.selection.endDate
+        attendanceDate >= date.selection.startDate &&
+        attendanceDate < date.selection.endDate
       );
     });
     console.log("hello", filtered);
